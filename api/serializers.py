@@ -1,9 +1,10 @@
 from rest_framework import serializers
 from student.models import Student
-from classes.models import ClassPeriod
 from teacher.models import Teacher
 from course.models import Course
 from classes.models import Class
+from classPeriod.models import ClassPeriod
+
 
 
 class StudentSerializer(serializers.ModelSerializer):

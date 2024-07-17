@@ -3,12 +3,13 @@ from rest_framework.views import APIView
 from student.models import Student
 from .serializers import StudentSerializer
 from rest_framework.response import Response
-from classes.models import ClassPeriod
 from .serializers import ClassPeriodSerializer
 from .serializers import TeacherSerializer
 from teacher.models import Teacher
 from course.models import Course
 from classes.models import Class
+from classPeriod.models import ClassPeriod
+
 
 
 # Create your views here.
@@ -39,6 +40,12 @@ class CourseListView(APIView):
     def get(self, request):
         course = Course.objects.all()
         serializer = CourseSerializer(course, many = True)
+        return Response(serializer.data)
+
+class ClassPeriodListView(APIView):
+    def get(self, request):
+        class_period = ClassPeriod.objects.all()
+        serializer = ClassPeriodSerializer(classPeriod, many = True)
         return Response(serializer.data)
 
         
