@@ -16,7 +16,7 @@ class Student(models.Model):
     country = models.CharField(max_length = 20)
     date_of_birth = models.DateField()
     code = models.PositiveSmallIntegerField()
-    hospital_report = models.ImageField()
+    # hospital_report = models.ImageField()
 
 
     def __str__(self):
